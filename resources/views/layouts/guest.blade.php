@@ -1,25 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    </body>
-</html> --}}
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -35,16 +13,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('resources/images') }}"> --}}
+   
     <link rel="stylesheet" href="(['resources/css/app.css'])">
-    {{-- <link rel="stylesheet" href="(['resources/images'])"> --}}
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
+   
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    {{-- <script src="{{ asset('resource/js/app.js') }}" defer></script> --}}
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- @vite(['resources/images', 'resources/js/app.js']) --}}
+ 
 </head>
 
 <body>
@@ -55,11 +30,11 @@
                     href="#">
                     Clifford Property Management
                 </a>
-                <!-- Mobile menu button -->
+                <!-- Mobile property button -->
                 <div @click="isOpen = !isOpen" class="flex md:hidden">
                     <button type="button"
                         class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-                        aria-label="toggle menu">
+                        aria-label="toggle property">
                         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
                             <path fill-rule="evenodd"
                                 d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
@@ -69,7 +44,7 @@
                 </div>
             </div>
 
-            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <!-- Mobile property open: "block", property closed: "hidden" -->
             <div :class="isOpen ? 'flex' : 'hidden'"
                 class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
                 <a class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400"
@@ -77,9 +52,9 @@
                 <a class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400"
                     href="{{ route('categories.index') }}">Categories</a>
                 <a class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400"
-                    href="{{ route('properties.index') }}">Our Properties</a>
+                    href="{{ route('properties.index') }}">Properties</a>
                 <a class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400"
-                    href="{{ route('bookings.step.one') }}">Make Booking</a>
+                    href="{{ route('bookings.step.one') }}">Booking</a>
 
             </div>
         </nav>

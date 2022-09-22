@@ -97,7 +97,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-end m-2 p-2">
                 <a href="{{ route('admin.tables.create') }}"
-                    class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">New Table</a>
+                    class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">New House</a>
             </div>
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -112,7 +112,7 @@
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                            Rooms
+                                            No. of Rooms
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
@@ -120,7 +120,7 @@
                                         </th>
                                         <th scope="col"
                                             class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                            Location
+                                            Category
                                         </th>
                                         <th scope="col" class="relative py-3 px-6">
                                             <span class="sr-only">Edit</span>

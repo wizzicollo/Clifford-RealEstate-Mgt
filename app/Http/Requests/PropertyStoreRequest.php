@@ -26,8 +26,9 @@ class PropertyStoreRequest extends FormRequest
         return [
             'name' => ['required'],
             'description' => ['required'],
-            'price' => ['required'],
             'image' => ['required', 'image'],
+            'price' => ['required'],
+            
         ];
     }
 }

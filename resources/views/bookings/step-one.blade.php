@@ -68,7 +68,7 @@
                                     @enderror
                                 </div>
                                 <div class="sm:col-span-6">
-                                    <label for="res_date" class="block text-sm font-medium text-gray-700"> Booking
+                                    <label for="book_date" class="block text-sm font-medium text-gray-700"> Booking
                                         Date
                                     </label>
                                     <div class="mt-1">
@@ -84,8 +84,7 @@
                                     @enderror
                                 </div>
                                 <div class="sm:col-span-6">
-                                    <label for="rooms_number" class="block text-sm font-medium text-gray-700"> Rooms
-                                        Number
+                                    <label for="rooms_number" class="block text-sm font-medium text-gray-700"> No. of Rooms                                        
                                     </label>
                                     <div class="mt-1">
                                         <input type="number" id="rooms_number" name="rooms_number"

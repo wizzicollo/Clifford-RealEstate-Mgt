@@ -26,7 +26,7 @@ class BookingController extends Controller
             'first_name' => ['required'],
             'last_name' => ['required'],
             'email' => ['required', 'email'],
-            'res_date' => ['required', 'date', new DateBetween, new TimeBetween],
+            'book_date' => ['required', 'date', new DateBetween, new TimeBetween],
             'tel_number' => ['required'],
             'rooms_number' => ['required'],
         ]);
@@ -47,7 +47,7 @@ class BookingController extends Controller
     public function stepTwo(Request $request)
     {
         $booking = $request->session()->get('booking');
-        $res_table_ids = Booking::orderBy('book_date')->get()->filter(function ($value) use ($booking) {
+        $book_table_ids = Booking::orderBy('book_date')->get()->filter(function ($value) use ($booking) {
             return $value->book_date->format('Y-m-d') == $booking->book_date->format('Y-m-d');
         })->pluck('table_id');
         $tables = Table::where('status', TableStatus::Available)

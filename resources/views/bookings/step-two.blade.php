@@ -5,7 +5,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="h-32 md:h-auto md:w-1/2">
                         <img class="object-cover w-full h-full"
-                            src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/08/Rent_a_home.webp" alt="img" />
+                            src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/07/Sell_a_home.webp" alt="img" />
                     </div>
                     <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
                         <div class="w-full">

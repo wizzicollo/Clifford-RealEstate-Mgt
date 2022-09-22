@@ -32,7 +32,6 @@ class BookingController extends Controller
     {
         $tables = Table::where('status', TableStatus::Available)->get();
         return view('admin.bookings.create', compact('tables'));
-    
     }
 
     /**
@@ -47,12 +46,12 @@ class BookingController extends Controller
         if ($request->rooms_number > $table->rooms_number) {
             return back()->with('warning', 'Please choose the house based on rooms.');
         }
-        
         $request_date = Carbon::parse($request->book_date);
         foreach ($table->bookings as $book) {
             if ($book->book_date->format('Y-m-d') == $request_date->format('Y-m-d')) {
                 return back()->with('warning', 'This house is booked for this date.');
             }
+        }
         Booking::create($request->validated());
 
         return to_route('admin.bookings.index')->with('success', 'Booking created successfully.');
@@ -75,12 +74,10 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
     public function edit(Booking $booking)
     {
         $tables = Table::where('status', TableStatus::Available)->get();
         return view('admin.bookings.edit', compact('booking', 'tables'));
-    }
     }
 
     /**
@@ -90,24 +87,24 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function update(BookingStoreRequest $request, Booking $booking)
     {
         $table = Table::findOrFail($request->table_id);
         if ($request->rooms_number > $table->rooms_number) {
-            return back()->with('warning', 'Please choose the house based on rooms.');
+            return back()->with('warning', 'Please choose the table base on rooms.');
         }
         $request_date = Carbon::parse($request->book_date);
         $bookings = $table->bookings()->where('id', '!=', $booking->id)->get();
         foreach ($bookings as $book) {
             if ($book->book_date->format('Y-m-d') == $request_date->format('Y-m-d')) {
-                return back()->with('warning', 'This house is booked for this date.');
+                return back()->with('warning', 'This table is booked for this date.');
             }
         }
 
-        $reservation->update($request->validated());
-        return to_route('admin.reservations.index')->with('success', 'Reservation updated successfully.');
+        $booking->update($request->validated());
+        return to_route('admin.bookings.index')->with('success', 'Booking updated successfully.');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -121,3 +118,4 @@ class BookingController extends Controller
         return to_route('admin.bookings.index')->with('warning', 'Booking deleted successfully.');
     }
 }
+
